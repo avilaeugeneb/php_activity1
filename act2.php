@@ -61,29 +61,50 @@
 		echo "<br>";
 	}
 
-	echo "<h1>6x6 XOXOX</h1>";
+	echo "<h1>6x6 XOXOX nested switch</h1>";
 	for($i=1;$i<=6;$i++){
 		for($j=1;$j<=6;$j++){
 
 			switch($i){
 				case ($i%2==0):
-					switch($j){
-						case ($j%2==0):
-							echo "X ";
-							break;
-						default:
-							echo "0 ";
-					}
+				switch($j){
+					case ($j%2==0):
+					echo "X ";
 					break;
+					default:
+					echo "0 ";
+				}
+				break;
 
 				default:
-					switch($j){
-						case ($j%2==0):
-							echo "0 ";
-							break;
-						default:
-							echo "X ";
-					}
+				switch($j){
+					case ($j%2==0):
+					echo "0 ";
+					break;
+					default:
+					echo "X ";
+				}
+			}
+			
+		}
+		echo "<br>";
+	}
+
+	echo "<br>";
+
+
+	echo "<h1>6x6 XOXOX single switch</h1>";
+	for($i=1;$i<=6;$i++){
+		for($j=1;$j<=6;$j++){
+
+			$a = $i + $j;
+
+			switch($a){
+				case ($a%2==0):
+					echo "X ";
+					break;
+				default:
+					echo "0 ";
 			}
 			
 		}
